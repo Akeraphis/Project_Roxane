@@ -14,6 +14,7 @@ import NotFoundPage from './ui/NotFoundPage';
 import AdministrationHome from './ui/administration/administrationHome'
 import InterestZonesList from './ui/administration/interestZones/InterestZones';
 import Users from './ui/administration/users/Users';
+import StopsList from './ui/administration/stops/StopsList'
 
 const browserHistory = createBrowserHistory();
 
@@ -24,7 +25,8 @@ export const renderRoutes = () => (
       <Route exact path='/1' component={Questions}/>
       <Route exact path='/administration' component={AdministrationHome}/>
       <Route exact path='/administration/interestZones' component={InterestZonesList}/>
-      <Route exact path='/administration/users' component={Users}/>
+      <Route exact path='/administration/users' component={Users} />
+      <Route exact path='/administration/stops' component={StopsList} />
       <Route component={NotFoundPage}/>
     </Switch>
   </Router>

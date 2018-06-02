@@ -38,11 +38,8 @@ class InterestZonesList extends Component {
   render(){
     return (
       <div className="container">
+        <button onClick={this.backAdmin.bind(this)}>Back</button><br/>
         <h1>Interest Zones</h1><br/>
-        <button onClick={this.backAdmin.bind(this)}>Back</button>
-        <ul>
-          {this.renderIZ()}
-        </ul><br/>
         <form className="new-IZ" onSubmit={this.handleSubmit.bind(this)}>
           <input
             type="text"
@@ -66,6 +63,9 @@ class InterestZonesList extends Component {
           /><br/>
           <button type="submit">Create</button>
         </form>
+        <ul>
+          {this.renderIZ()}
+        </ul><br/>
       </div>
     );
   }
