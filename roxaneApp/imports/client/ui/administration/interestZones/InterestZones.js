@@ -8,6 +8,8 @@ import InterestZone from './InterestZone';
 import IZCreationForm from './IZCreationForm';
 import { InterestZones } from '../../../../api/interestZones.js';
 import DataTable from '../../../standardComponents/react_table.js';
+import NavBar from "../../NavBar";
+import AdminSideBar from '../AdminSideBar';
 
 class InterestZonesList extends Component {
 
@@ -21,22 +23,21 @@ class InterestZonesList extends Component {
     Meteor.call('iz.deleteAll');
   }
 
-  backAdmin(e){
-    e.preventDefault();
-    window.location = '/administration';
-  }
-
   render(){
     return (
-      <div className="container">
-        <button onClick={this.backAdmin}>Back</button><br/>
-        <h1>Interest Zones</h1><br/>
-        <IZCreationForm />
-        <button className="delete" onClick={this.deleteAllIZ.bind(this)}>Delete all</button>
-        <DataTable collection={this.props.interestZones}/>
-        <ul>
-          {this.renderIZ()}
-        </ul>
+      <div className="main-layout">
+        <NavBar />
+        <AdminSideBar />
+        <div className="right-side-nav">
+          <h1>Interest Zones</h1><br/>
+          <IZCreationForm /><br/>
+          <button className="btn btn-confirmation" onClick={this.deleteAllIZ.bind(this)}>Delete all</button><br/>
+          <br/><br/>
+          <DataTable collection={this.props.interestZones}/>
+          <ul>
+            {this.renderIZ()}
+          </ul>
+        </div>
       </div>
     );
   }

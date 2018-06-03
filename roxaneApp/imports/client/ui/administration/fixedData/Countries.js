@@ -6,21 +6,21 @@ import { Meteor } from 'meteor/meteor';
 import { Countries } from '../../../../api/countries.js';
 import CountryCreationForm from './CountryCreationForm';
 import DataTable from '../../../standardComponents/react_table.js';
+import NavBar from "../../NavBar";
+import AdminSideBar from '../AdminSideBar';
 
 class CountriesList extends Component {
 
-  backAdmin(e){
-    e.preventDefault();
-    window.location = '/administration';
-  }
-
   render(){
     return(
-      <div className="container">
-        <button onClick={this.backAdmin}>Back</button>
-        <h1>Countries</h1><br/>
-        <CountryCreationForm/><br/>
-        <DataTable collection={this.props.countries}/>
+      <div className="main-layout">
+        <NavBar />
+        <AdminSideBar />
+        <div className="right-side-nav">
+          <h1>Countries</h1><br/>
+          <CountryCreationForm/><br/>
+          <DataTable collection={this.props.countries}/>
+        </div>
       </div>
     );
   }

@@ -6,21 +6,21 @@ import { Meteor } from 'meteor/meteor';
 import { Regions } from '../../../../api/regions.js';
 import RegionCreationForm from './RegionCreationForm';
 import DataTable from '../../../standardComponents/react_table.js';
+import NavBar from "../../NavBar";
+import AdminSideBar from '../AdminSideBar';
 
 class RegionsList extends Component {
 
-  backAdmin(e){
-    e.preventDefault();
-    window.location = '/administration';
-  }
-
   render(){
     return(
-      <div className="container">
-        <button onClick={this.backAdmin}>Back</button>
-        <h1>Regions</h1><br/>
-        <RegionCreationForm/><br/>
-        <DataTable collection={this.props.regions}/>
+      <div className="main-layout">
+        <NavBar />
+        <AdminSideBar />
+        <div className="right-side-nav">
+          <h1>Regions</h1><br/>
+          <RegionCreationForm/><br/>
+          <DataTable collection={this.props.regions}/>
+        </div>
       </div>
     );
   }

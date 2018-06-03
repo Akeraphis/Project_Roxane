@@ -7,6 +7,8 @@ import { Meteor } from 'meteor/meteor';
 import { Stops } from '../../../../api/stops.js';
 import StopsCreationForm from './StopsCreationForm'
 import DataTable from '../../../standardComponents/react_table.js'
+import NavBar from "../../NavBar";
+import AdminSideBar from '../AdminSideBar';
 
 class StopsList extends Component {
 
@@ -14,19 +16,19 @@ class StopsList extends Component {
     Meteor.call('stops.deleteAll');
   }
 
-  backAdmin(e){
-    e.preventDefault();
-    window.location = '/administration';
-  }
-
   render(){
     return (
-      <div>
-        <button onClick={this.backAdmin}>Back</button><br/>
-        <h1>Stops</h1>
-        <StopsCreationForm />
-        <button className="delete" onClick={this.deleteAllStops.bind(this)}>Delete all</button>
-        <DataTable collection={this.props.stops}/>
+      <div className="main-layout">
+        <NavBar />
+        <AdminSideBar />
+        <div className="right-side-nav">
+          <h1>Stops</h1>
+          <StopsCreationForm />
+          <br/>
+          <button className="delete" onClick={this.deleteAllStops.bind(this)}>Delete all</button>
+          <br/><br/>
+          <DataTable collection={this.props.stops}/>
+        </div>
       </div>
     )
   }

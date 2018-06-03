@@ -13,7 +13,7 @@ export default class NavBar extends Component {
     return (
       <div className="main-layout">
         <header>
-          <h2><button className='btn' onClick={this.getToHome}>Roxane</button></h2>
+          <h2><button className='btn' onClick={this.getToHome}>Gama</button></h2>
           <nav>
             <a href='/administration'>My Trips</a>
             <a href='/administration'>Administration</a>

@@ -39,11 +39,6 @@ class RegionCreationForm extends Component {
     })
   }
 
-  goCountryPage(e){
-    e.preventDefault();
-    window.location = '/administration/countries'
-  }
-
   render() {
     return(
       <form className="new" onSubmit={this.onHandleSubmit.bind(this)}>
@@ -60,9 +55,9 @@ class RegionCreationForm extends Component {
               <option key={country._id} value={country.name}>{country.name}</option>
             )
           })}
-        </select><button className="redirect" onClick={this.goCountryPage}>+ Country</button>
+        </select>
         <br/>
-        <button type="submit">Create</button>
+        <button type="submit" className="btn btn-text">Create</button>
       </form>
     );
   }

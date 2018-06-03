@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 
-import { InterestZones } from '../../../../api/continents.js'
+import { InterestZones } from '../../../../api/continents.js';
 
 export default class Continent extends Component {
 

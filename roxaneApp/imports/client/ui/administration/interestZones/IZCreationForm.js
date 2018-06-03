@@ -42,11 +42,6 @@ class IZCreationForm extends Component {
     })
   }
 
-  goRegionPage(e){
-    e.preventDefault();
-    window.location = '/administration/regions'
-  }
-
   render(){
     return(
       <form className="new" onSubmit={this.onHandleSubmit.bind(this)}>
@@ -63,9 +58,9 @@ class IZCreationForm extends Component {
               <option key={region._id} value={region.name}>{region.name}</option>
             )
           })}
-        </select><button className="redirect" onClick={this.goRegionPage}>+ Region</button>
+        </select>
         <br/>
-        <button type="submit">Create</button>
+        <button type="submit" className="btn btn-text">Create</button>
       </form>
     )
   }

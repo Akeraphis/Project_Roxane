@@ -12,7 +12,7 @@ export default class InterestZone extends Component {
   render() {
     return (
       <li>
-        <button className="delete" onClick={this.deleteThisInterestZone.bind(this)}>
+        <button className="btn btn-confirmation" onClick={this.deleteThisInterestZone.bind(this)}>
           &times;
         </button>
         {this.props.interestZone.name}, {this.props.interestZone.region} in {this.props.interestZone.country} ({this.props.interestZone.continent})
