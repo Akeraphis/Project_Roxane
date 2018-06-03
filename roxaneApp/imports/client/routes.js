@@ -25,7 +25,7 @@ export const renderRoutes = () => (
   <Router history={browserHistory}>
     <Switch>
       <Route exact path="/" component={Welcome}/>
-      <Route exact path='/1' component={Questions}/>
+      <Route exact path='/questions' component={Questions}/>
       <Route exact path='/administration' component={AdministrationHome}/>
       <Route exact path='/administration/interestZones' component={InterestZonesList}/>
       <Route exact path='/administration/users' component={Users} />
