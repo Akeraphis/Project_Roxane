@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
 import AccountsUIWrapper from '../AccountsUIWrapper';
 
-export default class AdministrationHome extends Component {
+class AdministrationHome extends Component {
 
   iZClick(e){
     e.preventDefault();
@@ -24,10 +26,16 @@ export default class AdministrationHome extends Component {
       <div>
         <h1>Administration</h1>
         <AccountsUIWrapper /><br/>
-        <button onClick={this.iZClick.bind(this)} className="btn-link">Interest Zones</button>
-        <button onClick={this.userClick.bind(this)} className="btn-link">Users</button>
-        <button onClick={this.stopsClick.bind(this)} className="btn-link">Stops</button>
+        { this.props.currentUser ? <button onClick={this.iZClick.bind(this)} className="btn-link">Interest Zones</button> : ""}
+        { this.props.currentUser ? <button onClick={this.userClick.bind(this)} className="btn-link">Users</button> : ""}
+        { this.props.currentUser ? <button onClick={this.stopsClick.bind(this)} className="btn-link">Stops</button> : ""}
       </div>
     )
   }
 }
+
+export default withTracker(()=>{
+  return {
+    currentUser: Meteor.user(),
+  };
+})(AdministrationHome);

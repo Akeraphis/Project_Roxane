@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 
+
 import InterestZone from './InterestZone';
 import { InterestZones } from '../../../../api/interestZones.js'
 
@@ -74,5 +75,6 @@ class InterestZonesList extends Component {
 export default withTracker(()=>{
   return {
     interestZones: InterestZones.find({}).fetch(),
+    currentUser: Meteor.user(),
   };
 })(InterestZonesList);
