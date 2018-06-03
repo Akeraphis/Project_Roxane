@@ -14,7 +14,10 @@ import NotFoundPage from './ui/NotFoundPage';
 import AdministrationHome from './ui/administration/administrationHome'
 import InterestZonesList from './ui/administration/interestZones/InterestZones';
 import Users from './ui/administration/users/Users';
-import StopsList from './ui/administration/stops/StopsList'
+import StopsList from './ui/administration/stops/StopsList';
+import ContinentsList from './ui/administration/fixedData/Continents';
+import CountriesList from './ui/administration/fixedData/Countries';
+import RegionsList from './ui/administration/fixedData/Regions';
 
 const browserHistory = createBrowserHistory();
 
@@ -27,6 +30,9 @@ export const renderRoutes = () => (
       <Route exact path='/administration/interestZones' component={InterestZonesList}/>
       <Route exact path='/administration/users' component={Users} />
       <Route exact path='/administration/stops' component={StopsList} />
+      <Route exact path='/administration/continents' component={ContinentsList} />
+      <Route exact path='/administration/countries' component={CountriesList} />
+      <Route exact path='/administration/regions' component={RegionsList} />
       <Route component={NotFoundPage}/>
     </Switch>
   </Router>

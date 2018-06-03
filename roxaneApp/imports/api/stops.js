@@ -2,16 +2,16 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
-export const InterestZones = new Mongo.Collection('interestZones');
+export const Stops = new Mongo.Collection('stops');
 
 if(Meteor.isServer){
-  Meteor.publish("allInterestZones", function izPublication(){
-    return InterestZones.find();
-  })
+  Meteor.publish("allStops", function stopsPublication(){
+    return Stops.find();
+  });
 }
 
 Meteor.methods({
-  'iz.insert': function(name, region, country, continent){
+  'stop.insert': function(name, region, country, continent, latitude, longitude){
     check(name, String);
     check(region, String);
     check(country, String);
@@ -21,24 +21,25 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    InterestZones.insert({
+    Stops.insert({
       name : name,
       region: region,
       country: country,
       continent: continent,
+      latitude: latitude,
+      longitude: longitude,
       created_at: new Date(),
       creator_id:  this.userId,
       creator_name: Meteor.users.findOne({_id: this.userId}).username
     });
   },
 
-  'iz.delete': function(iz_id){
-    check(iz_id, String);
-    InterestZones.remove({_id: iz_id});
+  'stop.delete': function(stop_id){
+    check(stop_id, String);
+    Stops.remove({_id: stop_id});
   },
 
-  'iz.deleteAll': function(){
-    InterestZones.remove({});
+  'stops.deleteAll': function(){
+    Stops.remove({});
   },
-
 });
