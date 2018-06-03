@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Meteor } from 'meteor/meteor';
 
 import { InterestZones } from '../../../../api/interestZones.js'
 
 export default class InterestZone extends Component {
 
   deleteThisInterestZone(){
-    InterestZones.remove(this.props.interestZone._id);
+    Meteor.call('iz.delete', this.props.interestZone._id);
   }
 
   render() {

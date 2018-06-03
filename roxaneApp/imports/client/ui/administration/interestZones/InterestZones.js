@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
 
 
 import InterestZone from './InterestZone';
@@ -16,12 +17,7 @@ class InterestZonesList extends Component {
     const country = ReactDOM.findDOMNode(this.refs.izCountry).value.trim();
     const continent = ReactDOM.findDOMNode(this.refs.izContinent).value.trim();
 
-    InterestZones.insert({
-      name : name,
-      region : region,
-      country : country,
-      continent : continent
-    })
+    Meteor.call('iz.insert', name, region, country, continent);
 
   }
 
