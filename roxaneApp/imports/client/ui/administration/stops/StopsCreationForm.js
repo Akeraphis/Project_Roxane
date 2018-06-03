@@ -5,28 +5,36 @@ import ReactDOM from 'react-dom';
 
 import { Regions } from '../../../../api/regions.js';
 
-class IZCreationForm extends Component {
+class StopsCreationForm extends Component {
   constructor() {
     super();
     this.state = {
       name: "",
       region: "",
+      latitude: "",
+      longitude: ""
     }
     this.onHandleChangeName = this.onHandleChangeName.bind(this);
     this.onHandleChangeRegion = this.onHandleChangeRegion.bind(this);
+    this.onHandleChangeLatitude = this.onHandleChangeLatitude.bind(this);
+    this.onHandleChangeLongitude = this.onHandleChangeLongitude.bind(this);
   };
 
   onHandleSubmit(e){
     e.preventDefault();
 
-    const name = ReactDOM.findDOMNode(this.refs.izName).value.trim();
-    const region = ReactDOM.findDOMNode(this.refs.izRegion).value.trim();
+    const name = ReactDOM.findDOMNode(this.refs.stopName).value.trim();
+    const region = ReactDOM.findDOMNode(this.refs.stopRegion).value.trim();
+    const latitude = ReactDOM.findDOMNode(this.refs.stopLatitude).value.trim();
+    const longitude = ReactDOM.findDOMNode(this.refs.stopLongitude).value.trim();
 
-    Meteor.call('iz.insert', name, region);
+    Meteor.call('stop.insert', name, region, latitude, longitude);
 
     this.setState({
       name : "",
       region: "",
+      latitude: "",
+      longitude: ""
     })
   }
 
@@ -42,6 +50,18 @@ class IZCreationForm extends Component {
     })
   }
 
+  onHandleChangeLatitude(e){
+    this.setState({
+      latitude: e.target.value
+    })
+  }
+
+  onHandleChangeLongitude(e){
+    this.setState({
+      longitude: e.target.value
+    })
+  }
+
   goRegionPage(e){
     e.preventDefault();
     window.location = '/administration/regions'
@@ -52,12 +72,12 @@ class IZCreationForm extends Component {
       <form className="new" onSubmit={this.onHandleSubmit.bind(this)}>
         <input
           type="text"
-          ref="izName"
-          placeholder="Interest Zone name"
+          ref="stopName"
+          placeholder="Stop name"
           onChange={this.onHandleChangeName}
           value= {this.state.name}
         /><br/>
-        <select name="select" ref="izRegion" value={this.state.region} onChange={this.onHandleChangeRegion}>
+        <select name="select" ref="stopRegion" value={this.state.region} onChange={this.onHandleChangeRegion}>
           {this.props.regions.map((region) => {
             return(
               <option key={region._id} value={region.name}>{region.name}</option>
@@ -65,6 +85,20 @@ class IZCreationForm extends Component {
           })}
         </select><button className="redirect" onClick={this.goRegionPage}>+ Region</button>
         <br/>
+        <input
+          type="text"
+          ref="stopLatitude"
+          placeholder="Stop latitude"
+          onChange={this.onHandleChangeLatitude}
+          value= {this.state.latitude}
+        /><br/>
+        <input
+          type="text"
+          ref="stopLongitude"
+          placeholder="Stop longitude"
+          onChange={this.onHandleChangeLongitude}
+          value= {this.state.longitude}
+        /><br/>
         <button type="submit">Create</button>
       </form>
     )
@@ -77,4 +111,4 @@ export default withTracker(()=>{
     regions: Regions.find({}).fetch(),
     currentUser: Meteor.user(),
   };
-})(IZCreationForm);
+})(StopsCreationForm);

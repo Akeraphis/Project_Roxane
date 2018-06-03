@@ -41,13 +41,18 @@ class AdministrationHome extends Component {
     return(
       <div className = "main-layout">
         <NavBar />
-        <h1>Administration</h1>
-        { this.props.currentUser ? <button onClick={this.iZClick} className="btn-link">Interest Zones</button> : ""}<br/><br/>
-        { this.props.currentUser ? <button onClick={this.userClick} className="btn-link">Users</button> : ""}<br/><br/>
-        { this.props.currentUser ? <button onClick={this.stopsClick} className="btn-link">Stops</button> : ""}<br/><br/>
-        { this.props.currentUser ? <button onClick={this.continentsClick} className="btn-link">Continents</button> : ""}<br/><br/>
-        { this.props.currentUser ? <button onClick={this.countriesClick} className="btn-link">Countries</button> : ""}<br/><br/>
-        { this.props.currentUser ? <button onClick={this.regionsClick} className="btn-link">Regions</button> : ""}<br/><br/>
+        <div className="side-nav">
+          { this.props.currentUser ? <button onClick={this.iZClick} className="btn-link">Interest Zones</button> : ""}<br/><br/>
+          { this.props.currentUser ? <button onClick={this.userClick} className="btn-link">Users</button> : ""}<br/><br/>
+          { this.props.currentUser ? <button onClick={this.stopsClick} className="btn-link">Stops</button> : ""}<br/><br/>
+          { this.props.currentUser ? <button onClick={this.continentsClick} className="btn-link">Continents</button> : ""}<br/><br/>
+          { this.props.currentUser ? <button onClick={this.countriesClick} className="btn-link">Countries</button> : ""}<br/><br/>
+          { this.props.currentUser ? <button onClick={this.regionsClick} className="btn-link">Regions</button> : ""}<br/><br/>
+          { this.props.currentUser ? <a href="/administration/regions">Regions</a> : ""}<br/><br/>
+        </div>
+        <main>
+          <h3>Administration</h3>
+        </main>
       </div>
     )
   }
