@@ -41,4 +41,8 @@ Meteor.methods({
   'regions.deleteAll': function(){
     Regions.remove({});
   },
+
+  'regions.find': function(name){
+    return Regions.findOne({name : name});
+  }
 });

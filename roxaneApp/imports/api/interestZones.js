@@ -2,6 +2,8 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
+import './regions.js';
+
 export const InterestZones = new Mongo.Collection('interestZones');
 
 if(Meteor.isServer){
@@ -11,15 +13,17 @@ if(Meteor.isServer){
 }
 
 Meteor.methods({
-  'iz.insert': function(name, region, country, continent){
+  'iz.insert': function(name, region){
     check(name, String);
     check(region, String);
-    check(country, String);
-    check(continent, String);
 
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
     }
+
+    let r = Meteor.call('regions.find', region);
+    let country = r.country;
+    let continent = r.continent;
 
     InterestZones.insert({
       name : name,
