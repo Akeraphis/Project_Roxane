@@ -4,38 +4,46 @@ import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 
 import { Regions } from '../../../../api/regions.js';
-import { Stops } from '../../../../api/stops.js';
+import { InterestPoints } from '../../../../api/interestPoints.js';
 
-class StopsCreationForm extends Component {
+class InterestPointsCreationForm extends Component {
   constructor() {
     super();
     this.state = {
       name: "",
       region: "",
       latitude: "",
-      longitude: ""
+      longitude: "",
+      category: "",
+      description: ""
     }
     this.onHandleChangeName = this.onHandleChangeName.bind(this);
     this.onHandleChangeRegion = this.onHandleChangeRegion.bind(this);
     this.onHandleChangeLatitude = this.onHandleChangeLatitude.bind(this);
     this.onHandleChangeLongitude = this.onHandleChangeLongitude.bind(this);
+    this.onHandleChangeCategory = this.onHandleChangeCategory.bind(this);
+    this.onHandleChangeDescription = this.onHandleChangeDescription.bind(this);
   };
 
   onHandleSubmit(e){
     e.preventDefault();
 
-    const name = ReactDOM.findDOMNode(this.refs.stopName).value.trim();
-    const region = ReactDOM.findDOMNode(this.refs.stopRegion).value.trim();
-    const latitude = ReactDOM.findDOMNode(this.refs.stopLatitude).value.trim();
-    const longitude = ReactDOM.findDOMNode(this.refs.stopLongitude).value.trim();
+    const name = ReactDOM.findDOMNode(this.refs.ipName).value.trim();
+    const region = ReactDOM.findDOMNode(this.refs.ipRegion).value.trim();
+    const latitude = ReactDOM.findDOMNode(this.refs.ipLatitude).value.trim();
+    const longitude = ReactDOM.findDOMNode(this.refs.ipLongitude).value.trim();
+    const description = ReactDOM.findDOMNode(this.refs.ipDescription).value.trim();
+    const category = ReactDOM.findDOMNode(this.refs.ipCategory).value.trim();
 
-    Meteor.call('stop.insert', name, region, latitude, longitude);
+    Meteor.call('ip.insert', name, region, latitude, longitude, description, category);
 
     this.setState({
       name : "",
       region: "",
       latitude: "",
-      longitude: ""
+      longitude: "",
+      description: "",
+      category: ""
     })
   }
 
@@ -63,17 +71,29 @@ class StopsCreationForm extends Component {
     })
   }
 
+  onHandleChangeDescription(e){
+    this.setState({
+      description: e.target.value
+    })
+  }
+
+  onHandleChangeCategory(e){
+    this.setState({
+      category: e.target.value
+    })
+  }
+
   render(){
     return(
       <form className="new" onSubmit={this.onHandleSubmit.bind(this)}>
         <input
           type="text"
-          ref="stopName"
-          placeholder="Stop name"
+          ref="ipName"
+          placeholder="IP name"
           onChange={this.onHandleChangeName}
           value= {this.state.name}
         /><br/>
-        <select name="select" ref="stopRegion" value={this.state.region} onChange={this.onHandleChangeRegion}>
+        <select name="select" ref="ipRegion" value={this.state.region} onChange={this.onHandleChangeRegion}>
           {this.props.regions.map((region) => {
             return(
               <option key={region._id} value={region.name}>{region.name}</option>
@@ -83,17 +103,31 @@ class StopsCreationForm extends Component {
         <br/>
         <input
           type="text"
-          ref="stopLatitude"
-          placeholder="Stop latitude"
+          ref="ipLatitude"
+          placeholder="IP latitude"
           onChange={this.onHandleChangeLatitude}
           value= {this.state.latitude}
         /><br/>
         <input
           type="text"
-          ref="stopLongitude"
-          placeholder="Stop longitude"
+          ref="ipLongitude"
+          placeholder="IP longitude"
           onChange={this.onHandleChangeLongitude}
           value= {this.state.longitude}
+        /><br/>
+        <input
+          type="text"
+          ref="ipDescription"
+          placeholder="IP description"
+          onChange={this.onHandleChangeDescription}
+          value= {this.state.description}
+        /><br/>
+        <input
+          type="text"
+          ref="ipCategory"
+          placeholder="IP category"
+          onChange={this.onHandleChangeCategory}
+          value= {this.state.category}
         /><br/>
         <button type="submit">Create</button>
       </form>
@@ -107,4 +141,4 @@ export default withTracker(()=>{
     regions: Regions.find({}).fetch(),
     currentUser: Meteor.user(),
   };
-})(StopsCreationForm);
+})(InterestPointsCreationForm);
