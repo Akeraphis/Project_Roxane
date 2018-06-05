@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 
 import { Stops } from '../../../api/stops.js';
+import { InterestPoints } from '../../../api/interestPoints.js';
 
 const Mapbox = ReactMapboxGl({
   minZoom: 2,
@@ -18,6 +19,7 @@ const mapStyle = {
 
 // Define layout to use in Layer component
 const layoutLayer = { 'icon-image': 'marker-15', 'icon-size': 3};
+const layoutLayer2 = { 'icon-image': 'harbor-15', 'icon-size': 3};
 const image = new Image();
 image.src = '../../../materials/678111-map-marker-512.png';
 const images: any = ['myMarker', image];
@@ -119,6 +121,14 @@ class MapCircuit extends Component {
               />
             )
             })}
+            {this.props.interestPoints.map((ip)=>{
+            return(
+              <Feature
+                key={ip._id}
+                coordinates={[ip.longitude, ip.latitude]}
+              />
+            )
+            })}
           </Layer>
           {stop && (
             <Popup key={stop._id} coordinates={[stop.longitude, stop.latitude]}>
@@ -134,7 +144,9 @@ class MapCircuit extends Component {
 
 export default withTracker(()=>{
   Meteor.subscribe('allStops');
+  Meteor.subscribe("allIPs")
     return {
-      stops: Stops.find({}).fetch()
+      stops: Stops.find({}).fetch(),
+      interestPoints: InterestPoints.find({}).fetch()
     };
 })(MapCircuit);
