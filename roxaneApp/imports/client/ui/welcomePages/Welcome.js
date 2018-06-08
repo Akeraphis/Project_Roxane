@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NavBar from "../NavBar";
+import NavBarHome from "../NavBarHome"
 
 export default class Welcome extends Component {
 
@@ -11,10 +12,13 @@ export default class Welcome extends Component {
 
   render(){
     return (
-      <div className="main-layout">
-        <NavBar />
+      <div>
+        <NavBarHome />
         <main>
-          <button className="btn btn-primary" onClick={this.clickOnStart}>Start</button>
+          <div className="Planning-roadtrips-s">
+            Planning roadtrips should not be a pain. We make it easy.
+          </div>
+          <button className="button-start" onClick={this.clickOnStart}>Start</button>
         </main>
       </div>
     );
