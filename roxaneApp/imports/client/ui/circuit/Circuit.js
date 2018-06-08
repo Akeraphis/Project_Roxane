@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 
 import NavBar from "../NavBar";
 import MapCircuit from './MapCircuit';
+import CircuitSelection from './CircuitSelection';
 
 export default class CircuitPage extends Component {
   render(){
@@ -11,6 +12,7 @@ export default class CircuitPage extends Component {
     return(
       <div>
         <NavBar />
+        <CircuitSelection />
         <MapCircuit />
       </div>
     )

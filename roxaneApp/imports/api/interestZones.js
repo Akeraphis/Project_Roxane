@@ -44,5 +44,7 @@ Meteor.methods({
   'iz.deleteAll': function(){
     InterestZones.remove({});
   },
-
+  'iz.find': function(izId){
+    return InterestZones.findOne({_id : izId});
+  }
 });

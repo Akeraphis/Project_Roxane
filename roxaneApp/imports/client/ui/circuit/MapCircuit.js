@@ -18,8 +18,9 @@ const mapStyle = {
 };
 
 // Define layout to use in Layer component
-const layoutLayer = { 'icon-image': 'marker-15', 'icon-size': 3};
-const layoutLayer2 = { 'icon-image': 'harbor-15', 'icon-size': 3};
+// For Icons : https://github.com/mapbox/mapbox-gl-styles/tree/master/sprites/basic-v9/_svg
+const layoutLayer = { 'icon-image': 'town-hall-11', 'icon-size': 2, 'visibility' : 'visible'};
+const layoutLayer2 = { 'icon-image': 'embassy-11', 'icon-size': 2, 'visibility' : 'visible'};
 const image = new Image();
 image.src = '../../../materials/678111-map-marker-512.png';
 const images: any = ['myMarker', image];
@@ -69,8 +70,14 @@ class MapCircuit extends Component {
     }
   };
 
-  onToggleHover(cursor: string, { map }: { map: any }) {
+  onToggleHover(cursor: string, { map }: { map: any }, stop: Stop) {
     map.getCanvas().style.cursor = cursor;
+    this.setState({
+      center: [stop.longitude, stop.latitude],
+      zoom: [12],
+      stop: stop
+    });
+
   }
 
   markerClick = (stop: Stop, { feature }: { feature: any }) => {
@@ -109,23 +116,25 @@ class MapCircuit extends Component {
           height: "100vh",
           width: "100vw"
         }}>
-          <Layer type="symbol" id="marker" layout={layoutLayer} image={images}>
-            {this.props.stops.map((stop)=>{
-            return(
-              <Feature
-                key={stop._id}
-                onMouseEnter={this.onToggleHover.bind(this, 'pointer')}
-                onMouseLeave={this.onToggleHover.bind(this, '')}
-                onClick={this.markerClick.bind(this, stop)}
-                coordinates={[stop.longitude, stop.latitude]}
-              />
-            )
-            })}
+          <Layer type="symbol" id="ips" layout={layoutLayer2} image={images}>
             {this.props.interestPoints.map((ip)=>{
             return(
               <Feature
                 key={ip._id}
                 coordinates={[ip.longitude, ip.latitude]}
+              />
+            )
+            })}
+          </Layer>
+          <Layer type="symbol" id="stops" layout={layoutLayer} image={images}>
+            {this.props.stops.map((stop)=>{
+            return(
+              <Feature
+                key={stop._id}
+                onMouseEnter={this.onToggleHover.bind(this, 'pointer', stop)}
+                onMouseLeave={this.onToggleHover.bind(this, '', null)}
+                onClick={this.markerClick.bind(this, stop)}
+                coordinates={[stop.longitude, stop.latitude]}
               />
             )
             })}

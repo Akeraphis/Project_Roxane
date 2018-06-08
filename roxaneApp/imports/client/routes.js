@@ -20,6 +20,7 @@ import ContinentsList from './ui/administration/fixedData/Continents';
 import CountriesList from './ui/administration/fixedData/Countries';
 import RegionsList from './ui/administration/fixedData/Regions';
 import InterestPointsList from './ui/administration/interestPoints/InterestPointsList';
+import CircuitsList from './ui/administration/circuits/CircuitsList';
 
 const browserHistory = createBrowserHistory();
 
@@ -37,6 +38,7 @@ export const renderRoutes = () => (
       <Route exact path='/administration/countries' component={CountriesList} />
       <Route exact path='/administration/regions' component={RegionsList} />
       <Route exact path='/administration/interestPoints' component={InterestPointsList} />
+      <Route exact path='/administration/circuits' component={CircuitsList} />
       <Route component={NotFoundPage}/>
     </Switch>
   </Router>
