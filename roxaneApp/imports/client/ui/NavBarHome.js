@@ -6,7 +6,7 @@ export default class NavBarHome extends Component {
 
   render(){
     return (
-      <div className="navbar-signup">
+      <div className="container navbar-signup">
           <div className="NAME">AiChill</div>
           <a href='/administration' className="Help">Administration</a>
           <a href='/help' className="Help">Help</a>
