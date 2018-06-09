@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import NavBar from "../NavBar";
-import NavBarHome from "../NavBarHome"
+import NavBarHome from "../NavBarHome";
 
 export default class Welcome extends Component {
 
