@@ -109,7 +109,7 @@ class CircuitsCreationForm extends Component {
         <input
           type="text"
           ref="cDescription"
-          placeholder="Circuit name"
+          placeholder="Circuit description"
           onChange={this.onHandleChangeDescription}
           value= {this.state.description}
         /><br/>
@@ -119,7 +119,8 @@ class CircuitsCreationForm extends Component {
               <option key={iz._id} value={iz.name}>{iz.name}</option>
             )
           })}
-        </select>
+        </select><br/>
+        <button className="btn btn-primary">Add stop</button><br/><br/>
         <button type="submit">Create</button>
       </form>
     )

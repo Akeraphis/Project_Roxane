@@ -21,7 +21,8 @@
     "react-mapbox-gl": "^3.8.0",
     "react-router": "^4.2.0",
     "react-table": "^6.8.6",
-    "styled-components": "^3.3.2"
+    "styled-components": "^3.3.2",
+    "xlsx": "^0.13.0"
   },
   "devDependencies": {
     "chai": "^4.1.2"

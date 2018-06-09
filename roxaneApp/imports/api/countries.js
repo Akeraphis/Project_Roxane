@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
+import XLSX from 'xlsx';
 
 export const Countries = new Mongo.Collection('countries');
 
@@ -8,6 +9,17 @@ if(Meteor.isServer){
   Meteor.publish("allCountries", function countriesPublication(){
     return Countries.find();
   });
+
+  Meteor.methods({
+    'importCountriesFromXLS': function(){
+      let myCountries={};
+      myCountries = JSON.parse(Assets.getText('Countries.json'));
+      _.forEach(myCountries, function(c){
+        console.log(c)
+        Meteor.call('country.insert', c.Name, c.Continent);
+      })
+    }
+  })
 }
 
 Meteor.methods({

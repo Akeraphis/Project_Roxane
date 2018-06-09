@@ -11,6 +11,11 @@ import AdminSideBar from '../AdminSideBar';
 
 class CountriesList extends Component {
 
+  importCountries(){
+    console.log("--- importing list of countries ---");
+    Meteor.call('importCountriesFromXLS');
+  }
+
   render(){
     return(
       <div className="main-layout">
@@ -19,6 +24,7 @@ class CountriesList extends Component {
         <div className="right-side-nav">
           <h1>Countries</h1><br/>
           <CountryCreationForm/><br/>
+          <button className="btn btn-import" onClick={this.importCountries}>Import</button>
           <DataTable collection={this.props.countries}/>
         </div>
       </div>

@@ -19,6 +19,9 @@ export default class Welcome extends Component {
             Planning roadtrips should not be a pain. We make it easy.
           </div>
           <button className="button-start" onClick={this.clickOnStart}>Start</button>
+          <div className="highlighted-trips-board">
+            <img className="image-trip-welcome" src="../../../../materials/Homepage/USA.jpg" />
+          </div>
         </main>
       </div>
     );
