@@ -17,6 +17,7 @@
     "react-dom": "^16.4.0",
     "react-fontawesome": "^1.6.1",
     "react-google-maps": "^9.4.5",
+    "react-input-range": "^1.3.0",
     "react-komposer": "^2.0.0",
     "react-mapbox-gl": "^3.8.0",
     "react-router": "^4.2.0",

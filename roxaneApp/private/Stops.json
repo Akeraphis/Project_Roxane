@@ -1,0 +1,109 @@
+[
+	{
+		"ID": "S_Tuscany_Sienna",
+		"Name": "Sienna",
+		"Region": "Tuscany",
+		"Latitude": "43.319721",
+		"Longitude": " 11.331203",
+		"Description": "It is the capital of the province of Siena."
+	},
+	{
+		"ID": "S_USA_CA_City_1",
+		"Name": "San Francisco",
+		"Region": "CA",
+		"Latitude": "37.77492",
+		"Longitude": "-122.41941",
+		"Description": "San Francisco",
+		"Picture": "/stops/SF.jpg"
+	},
+	{
+		"ID": "S_USA_CA_Park_1",
+		"Name": "Yosemite National Park",
+		"Region": "CA",
+		"Latitude": "37.86463",
+		"Longitude": "-119.53794",
+		"Description": "Yosemite National Park",
+		"Picture": "/stops/Yosemite"
+	},
+	{
+		"ID": "S_USA_NV_City_1",
+		"Name": "Las Vegas",
+		"Region": "NV",
+		"Latitude": "36.169941",
+		"Longitude": "-115.139830",
+		"Description": "Las Vegas",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_CA_Park_2",
+		"Name": "Death Valley",
+		"Region": "CA",
+		"Latitude": "36.532265",
+		"Longitude": "-116.932541",
+		"Description": "Death Valley",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_UT_Park_1",
+		"Name": "Zion National Park",
+		"Region": "UT",
+		"Latitude": "37.298202",
+		"Longitude": "-113.026300",
+		"Description": "Zion National Park",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_UT_Park_2",
+		"Name": "Bryce Canyon National Park",
+		"Region": "UT",
+		"Latitude": "37.593038",
+		"Longitude": "-112.187090",
+		"Description": "Bryce Canyon National Park",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_CA_Park_3",
+		"Name": "Sequoia and Kings Canyon National Parks",
+		"Region": "CA",
+		"Latitude": "36.564721",
+		"Longitude": "-118.772719",
+		"Description": "Sequoia and Kings Canyon National Parks",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_AZ_Park_1",
+		"Name": "Grand Canyon National Park",
+		"Region": "AZ",
+		"Latitude": "36.106965",
+		"Longitude": "-112.112997",
+		"Description": "Grand Canyon National Park",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_CA_City_2",
+		"Name": "Los Angeles",
+		"Region": "CA",
+		"Latitude": "34.052234",
+		"Longitude": "-118.243685",
+		"Description": "Los Angeles",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_UT_Park_3",
+		"Name": "Arches National Park",
+		"Region": "UT",
+		"Latitude": "38.733081",
+		"Longitude": "-109.592514",
+		"Description": "Arches National Park",
+		"Picture": ""
+	},
+	{
+		"ID": "S_USA_UT_Park_4",
+		"Name": "Canyonlands National Park",
+		"Region": "UT",
+		"Latitude": "38.326869",
+		"Longitude": "-109.878259",
+		"Description": "Canyonlands National Park",
+		"Picture": ""
+	}
+]

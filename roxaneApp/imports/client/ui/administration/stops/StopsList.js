@@ -16,6 +16,11 @@ class StopsList extends Component {
     Meteor.call('stops.deleteAll');
   }
 
+  importStops(){
+    console.log("--- importing list of stops ---");
+    Meteor.call('importStopsFromJson');
+  }
+
   render(){
     return (
       <div className="main-layout">
@@ -26,6 +31,8 @@ class StopsList extends Component {
           <StopsCreationForm />
           <br/>
           <button className="delete" onClick={this.deleteAllStops.bind(this)}>Delete all</button>
+          <br/><br/>
+          <button className="btn btn-import" onClick={this.importStops}>Import</button>
           <br/><br/>
           <DataTable collection={this.props.stops}/>
         </div>

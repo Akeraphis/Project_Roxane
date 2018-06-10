@@ -1,0 +1,98 @@
+[
+	{
+		"Circuit_ID": "C_IT_TU",
+		"Name": "7 days in the heart of Tuscany",
+		"Description": "This trip is designed for people that want to discover the main spots of Tuscany in 7 days.",
+		"InterestZone": "Tuscany",
+		"Average rating (Placeholder)": "4.2",
+		"NbDays": "7",
+		"Picture1": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Italy/Tuscany/Tuscany---Overview---house-fields.jpg?imwidth=450",
+		"Picture2": "http://www.italymagazine.com/sites/default/files/styles/960x430/public/tuscany-countryside2.jpg?itok=p1PfmDTM",
+		"Picture3": "http://www.nasamnatam.com/pics/da86bf74e7e8cf1445686a57b8ed47de.jpg",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_S_NAT_1",
+		"Name": "San Francisco and Yosemite",
+		"Description": "Discover San Francisco and Yosemite National Park.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "7",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_M_NAT_1",
+		"Name": "California's natural highlights",
+		"Description": "Explore San Francisco and California's best national parks.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "14",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_L_NAT_1",
+		"Name": "California grand tour",
+		"Description": "Amazing tour of San Francisco",
+		"InterestZone": " Los Angeles and California's best National Parks.",
+		"Average rating (Placeholder)": "West coast US",
+		"NbDays": "21",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_XL_NAT_1",
+		"Name": "West coast National Parks integral",
+		"Description": "Increadible tour of all the best National Parks in 4 weeks.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "28",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_S_ENT_1",
+		"Name": "West coast party express",
+		"Description": "The best parties of your life await you in Los Angeles and Las Vegas.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "7",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_M_ENT_1",
+		"Name": "West coast party and nature",
+		"Description": "Travel and play hard: party in Los Angeles and Las Vegas and visit amazing National Parks.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "14",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	},
+	{
+		"Circuit_ID": "C_USA_WC_L_ENT_1",
+		"Name": "3 weeks fun and nature in the west",
+		"Description": "In this 3 weeks trip you'll party in LA and Las Vegas and discover 4 of the major US National Parks.",
+		"InterestZone": "West coast US",
+		"Average rating (Placeholder)": "",
+		"NbDays": "21",
+		"Picture1": "",
+		"Picture2": "",
+		"Picture3": "",
+		"CarLocation": "Y"
+	}
+]

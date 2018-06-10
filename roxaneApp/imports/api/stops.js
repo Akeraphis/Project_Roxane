@@ -10,10 +10,21 @@ if(Meteor.isServer){
   Meteor.publish("allStops", function stopsPublication(){
     return Stops.find();
   });
+
+  Meteor.methods({
+    'importStopsFromJson': function(){
+      let myStops={};
+      myStops = JSON.parse(Assets.getText('Stops.json'));
+      console.log(myStops);
+      _.forEach(myStops, function(c){
+        Meteor.call('stop.insert', c.ID, c.Name, c.Region, c.Latitude, c.Longitude, c.Description, c.Picture);
+      });
+    }
+  });
 }
 
 Meteor.methods({
-  'stop.insert': function(name, region, latitude, longitude){
+  'stop.insert': function(id, name, region, latitude, longitude, description, picture){
     check(name, String);
     check(region, String);
 
@@ -26,12 +37,15 @@ Meteor.methods({
     let continent = r.continent;
 
     Stops.insert({
+      _id: id,
       name : name,
       region: region,
       country: country,
       continent: continent,
       latitude: latitude,
       longitude: longitude,
+      description: description,
+      picture: picture,
       created_at: new Date(),
       creator_id:  this.userId,
       creator_name: Meteor.users.findOne({_id: this.userId}).username
@@ -45,5 +59,5 @@ Meteor.methods({
 
   'stops.deleteAll': function(){
     Stops.remove({});
-  },
+  }
 });

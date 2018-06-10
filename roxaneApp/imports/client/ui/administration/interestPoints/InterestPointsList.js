@@ -16,6 +16,11 @@ class InterestPointsList extends Component {
     Meteor.call('ip.deleteAll');
   }
 
+  importIPs(){
+    console.log("--- importing list of IPs ---");
+    Meteor.call('importIPsFromJson');
+  }
+
   render(){
     return (
       <div className="main-layout">
@@ -26,6 +31,8 @@ class InterestPointsList extends Component {
           <InterestPointsCreationForm />
           <br/>
           <button className="delete" onClick={this.deleteAllIPs.bind(this)}>Delete all</button>
+          <br/><br/>
+          <button className="btn btn-import" onClick={this.importIPs}>Import</button>
           <br/><br/>
           <DataTable collection={this.props.interestPoints}/>
         </div>

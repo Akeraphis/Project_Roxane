@@ -16,6 +16,11 @@ class CircuitsList extends Component {
     Meteor.call('circuits.deleteAll');
   }
 
+  importCircuits(){
+    console.log("--- importing list of Circuits ---");
+    Meteor.call('importCircuitsFromJson');
+  }
+
   render(){
     return (
       <div className="main-layout">
@@ -27,7 +32,9 @@ class CircuitsList extends Component {
           <br/>
           <button className="delete" onClick={this.deleteAllCircuits.bind(this)}>Delete all</button>
           <br/><br/>
-          <DataTable collection={this.props.circuits}/>
+          <button className="btn btn-import" onClick={this.importCircuits}>Import</button>
+          <br/><br/>
+          {/* <DataTable collection={this.props.circuits}/> */}
         </div>
       </div>
     )

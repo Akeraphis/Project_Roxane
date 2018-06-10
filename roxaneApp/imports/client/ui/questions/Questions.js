@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import ReactDOM from 'react-dom';
+import InputRange from 'react-input-range';
 
 import NavBarHome from "../NavBarHome";
+import 'react-input-range/lib/css/index.css';
 
 export default class Questions extends Component {
   constructor(){
     super();
     this.state={
       group : "",
+      travel: "",
+      car : false,
       gender : "",
       music : "",
-      sport: ""
+      sport: "",
+      value: 5
     }
     this.onChangeGroupAlone = this.onChangeGroupAlone.bind(this);
     this.onChangeGroupCouple = this.onChangeGroupCouple.bind(this);
     this.onChangeGroupFamily = this.onChangeGroupFamily.bind(this);
     this.onChangeGroupFriends = this.onChangeGroupFriends.bind(this);
+    this.onChangeTravelBeach = this.onChangeTravelBeach.bind(this);
+    this.onChangeTravelSports = this.onChangeTravelSports.bind(this);
+    this.onChangeTravelCulture = this.onChangeTravelCulture.bind(this);
+    this.onChangeTravelOutdoors = this.onChangeTravelOutdoors.bind(this);
+    this.onChangeTravelHistory = this.onChangeTravelHistory.bind(this);
+    this.onChangeCarYes = this.onChangeCarYes.bind(this);
+    this.onChangeCarNo = this.onChangeCarNo.bind(this);
     this.onChangeGenderMale = this.onChangeGenderMale.bind(this);
     this.onChangeGenderFemale = this.onChangeGenderFemale.bind(this);
     this.onChangeMusicRock = this.onChangeMusicRock.bind(this);
@@ -56,6 +68,55 @@ export default class Questions extends Component {
     e.preventDefault();
     this.setState({
       group: "friends"
+    });
+  }
+
+  onChangeTravelBeach(e){
+    e.preventDefault();
+    this.setState({
+      travel: "beach"
+    });
+  }
+
+  onChangeTravelSports(e){
+    e.preventDefault();
+    this.setState({
+      travel: "sports"
+    });
+  }
+
+  onChangeTravelHistory(e){
+    e.preventDefault();
+    this.setState({
+      travel: "history"
+    });
+  }
+
+  onChangeTravelCulture(e){
+    e.preventDefault();
+    this.setState({
+      travel: "culture"
+    });
+  }
+
+  onChangeTravelOutdoors(e){
+    e.preventDefault();
+    this.setState({
+      travel: "outdoors"
+    });
+  }
+
+  onChangeCarYes(e){
+    e.preventDefault();
+    this.setState({
+      car: true
+    });
+  }
+
+  onChangeCarNo(e){
+    e.preventDefault();
+    this.setState({
+      car: false
     });
   }
 
@@ -158,6 +219,13 @@ export default class Questions extends Component {
     let selectedCouple = (this.state.group=="couple") ? "selectedGroup" : "notSelectedGroup";
     let selectedFamily = (this.state.group=="family") ? "selectedGroup" : "notSelectedGroup";
     let selectedFriends = (this.state.group=="friends") ? "selectedGroup" : "notSelectedGroup";
+    let selectedBeach = (this.state.travel=="beach") ? "selectedTravel" : "notSelectedTravel";
+    let selectedOutdoors = (this.state.travel=="outdoors") ? "selectedTravel" : "notSelectedTravel";
+    let selectedHistory = (this.state.travel=="history") ? "selectedTravel" : "notSelectedTravel";
+    let selectedSports = (this.state.travel=="sports") ? "selectedTravel" : "notSelectedTravel";
+    let selectedCulture = (this.state.travel=="culture") ? "selectedTravel" : "notSelectedTravel";
+    let selectedCar = this.state.car ? "selectedCar" : "notSelectedCar";
+    let selectedNoCar = this.state.car ? "notSelectedCar" : "selectedCar";
     let selectedMale = (this.state.gender=="male") ? "selectedGender" : "notSelectedGender";
     let selectedFemale = (this.state.gender=="female") ? "selectedGender" : "notSelectedGender";
     let selectedRock = (this.state.music=="rock") ? "selectedMusic" : "notSelectedMusic";
@@ -239,6 +307,79 @@ export default class Questions extends Component {
                   </div>
                 </div>
               </div><br/><br/>
+              <h5 className="questions-text">How many are you ?</h5>
+              <input
+                type="number"
+                ref="nbAdults"
+                className="form-control questions-text"
+                placeholder="Adults"
+                aria-label="nbAdults"
+              /><br/>
+              <input
+                type="number"
+                ref="nbChildren"
+                className="form-control questions-text"
+                placeholder="Children (under 18)"
+                aria-label="nbChildren"
+              /><br/>
+              <h5 className="questions-text">For your holidays, you absolutely need:</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedBeach}>
+                    <label className="questions-text">Beach</label><br/>
+                    <label onClick={this.onChangeTravelBeach}><img className="musicIcon" src="/Questions/004-beach.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedOutdoors}>
+                    <label className="questions-text">Outdoors</label><br/>
+                    <label onClick={this.onChangeTravelOutdoors}><img className="musicIcon" src="/Questions/005-mountain.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedHistory}>
+                    <label className="questions-text">History</label><br/>
+                    <label onClick={this.onChangeTravelHistory}><img className="musicIcon" src="/Questions/002-column.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedSports}>
+                    <label className="questions-text">Sports</label><br/>
+                    <label onClick={this.onChangeTravelSports}><img className="musicIcon" src="/Questions/001-trekking.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedCulture}>
+                    <label className="questions-text">Meeting a culture</label><br/>
+                    <label onClick={this.onChangeTravelCulture}><img className="musicIcon" src="/Questions/003-buddha.png"/></label>
+                  </div>
+                </div>
+              </div><br/>
+              <h5 className="questions-text">About transportation</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedCar}>
+                    <label className="questions-text">I will rent a car</label><br/>
+                    <label onClick={this.onChangeCarYes}><FontAwesome className="male-female" name='car' size='5x' /></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedNoCar}>
+                    <label className="questions-text">I can take care of myself</label><br/>
+                    <label onClick={this.onChangeCarNo}><FontAwesome className="male-female" name='bus' size='5x' /></label>
+                  </div>
+                </div>
+              </div><br/>
+              <h5 className="questions-text">From 1=Low Budget to 10=Extremely Expensive, where do you want to be ?</h5><br/>
+              <InputRange
+                maxValue={10}
+                minValue={0}
+                className="slider"
+                value={this.state.value}
+                onChange={value => this.setState({ value })}
+              />
+              <br/><br/><br/>
+              <h5 className="questions-text">We also need to ask you a few personal questions in order to find out the best trip for you!</h5><br/><br/>
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text questions-text" id="basic-addon1">Birth date:</span>

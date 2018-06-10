@@ -10,12 +10,21 @@ if(Meteor.isServer){
   Meteor.publish("allIPs", function ipsPublication(){
     return InterestPoints.find();
   });
+
+  Meteor.methods({
+    'importIPsFromJson': function(){
+      let myIPs={};
+      myIPs = JSON.parse(Assets.getText('InterestPoints.json'));
+      _.forEach(myIPs, function(c){
+        Meteor.call('ip.insert', c.IP_ID, c.Name, c.Region, c.Latitude, c.Longitude, c.Description, c.Picture, c.Category);
+      });
+    }
+  });
 }
 
 Meteor.methods({
-  'ip.insert': function(name, region, latitude, longitude, description, category){
+  'ip.insert': function(id, name, stop, latitude, longitude, description, picture, category){
     check(name, String);
-    check(region, String);
     check(description, String);
     check(category, String);
 
@@ -23,19 +32,15 @@ Meteor.methods({
       throw new Meteor.Error('not-authorized');
     }
 
-    let r = Meteor.call('regions.find', region);
-    let country = r.country;
-    let continent = r.continent;
-
     InterestPoints.insert({
+      _id: id,
       name : name,
-      region: region,
-      country: country,
-      continent: continent,
+      stop: stop,
       latitude: latitude,
       longitude: longitude,
       description: description,
       category: category,
+      picture: picture,
       created_at: new Date(),
       creator_id:  this.userId,
       creator_name: Meteor.users.findOne({_id: this.userId}).username
@@ -47,7 +52,7 @@ Meteor.methods({
     InterestPoints.remove({_id: ip_id});
   },
 
-  'IPs.deleteAll': function(){
+  'ip.deleteAll': function(){
     InterestPoints.remove({});
   },
 });

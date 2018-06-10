@@ -1,0 +1,50 @@
+[
+	{
+		"Circuit_ID": "C_IT_TU",
+		"Stop_ID": "S_Tuscany_Sienna",
+		"StopNr": "1",
+		"NbDays": "2",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	},
+	{
+		"Circuit_ID": "C_IT_TU",
+		"Stop_ID": "S_Tuscany_Florence",
+		"StopNr": "2",
+		"NbDays": "3",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	},
+	{
+		"Circuit_ID": "C_IT_TU",
+		"Stop_ID": "S_Tuscany_Pisa",
+		"StopNr": "3",
+		"NbDays": "1",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	},
+	{
+		"Circuit_ID": "C_IT_TU",
+		"Stop_ID": "S_Tuscany_Arezzo",
+		"StopNr": "4",
+		"NbDays": "1",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	},
+	{
+		"Circuit_ID": "C_USA_WC_S_NAT_1",
+		"Stop_ID": "S_USA_CA_City_1",
+		"StopNr": "1",
+		"NbDays": "4",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	},
+	{
+		"Circuit_ID": "C_USA_WC_S_NAT_1",
+		"Stop_ID": "S_USA_CA_Park_1",
+		"StopNr": "2",
+		"NbDays": "3",
+		"FromToSpecificTransportation": "N",
+		"SpecificTransportation": ""
+	}
+]
