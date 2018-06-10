@@ -18,6 +18,7 @@ export default class Welcome extends Component {
             Planning roadtrips should not be a pain. We make it easy.
           </div>
           <button className="button-start" onClick={this.clickOnStart}>Start</button>
+          <DifferentiatorsIcons />
           <TripsHighlighted/>
           <div className="-and-many-more center">
             And many more ...
@@ -27,6 +28,25 @@ export default class Welcome extends Component {
         </main>
       </div>
     );
+  }
+}
+
+class DifferentiatorsIcons extends Component{
+  render(){
+    return(
+      <div className="diffSection">
+        <img src="/Brain.png" className="Shape2"/>
+        <img src="/map.png" className="Shape2"/>
+        <img src="/pushbutton.png" className="Shape2"/>
+        <img src="/snap.png" className="Shape2"/>
+        <img src="/support.png" className="Shape2"/><br/>
+        <span className="diffText">AI powered</span>
+        <span className="diffText">Customized trips</span>
+        <span className="diffText">Sit and relax</span>
+        <span className="diffText">Pay once for all</span>
+        <span className="diffText">Premium support</span>
+      </div>
+    )
   }
 }
 
