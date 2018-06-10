@@ -212,17 +212,33 @@ export default class Questions extends Component {
                   aria-describedby="basic-addon4"
                 />
               </div><br/><br/>
-              <h5 className="questions-text">You will travel:</h5><br/>
-              <span>
-                  <label className="questions-text">Alone</label>
-                  <label className="questions-text">In couple</label>
-                  <label className="questions-text">With the family</label>
-                  <label className="questions-text">With friends</label><br/>
-                  <label className={selectedAlone} onClick={this.onChangeGroupAlone}><img className="musicIcon" src="/Questions/002-boy.png"/></label>
-                  <label className={selectedCouple} onClick={this.onChangeGroupCouple}><img className="musicIcon" src="/Questions/003-parents.png"/></label>
-                  <label className={selectedFamily} onClick={this.onChangeGroupFamily}><img className="musicIcon" src="/Questions/001-family.png"/></label>
-                  <label className={selectedFriends} onClick={this.onChangeGroupFriends}><img className="musicIcon" src="/Questions/004-friendship.png"/></label>
-              </span><br/><br/>
+              <h5 className="questions-text">You will travel:</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedAlone}>
+                    <label className="questions-text">Alone</label><br/>
+                    <label onClick={this.onChangeGroupAlone}><img src="/Questions/002-boy.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedCouple}>
+                    <label className="questions-text">In couple</label><br/>
+                    <label onClick={this.onChangeGroupCouple}><img src="/Questions/003-parents.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedFamily}>
+                    <label className="questions-text">With the family</label><br/>
+                    <label onClick={this.onChangeGroupFamily}><img src="/Questions/001-family.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedFriends}>
+                    <label className="questions-text">With friends</label><br/>
+                    <label onClick={this.onChangeGroupFriends}><img src="/Questions/004-friendship.png"/></label>
+                  </div>
+                </div>
+              </div><br/><br/>
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text questions-text" id="basic-addon1">Birth date:</span>
@@ -235,38 +251,88 @@ export default class Questions extends Component {
                   aria-label="Birth Date"
                   aria-describedby="basic-addon1"
                 />
+              </div><br/>
+              <h5 className="questions-text">You are:</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedMale}>
+                    <label className="questions-text">Man</label><br/>
+                    <label onClick={this.onChangeGenderMale}><FontAwesome className="male-female" name='male' size='5x' /></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedFemale}>
+                    <label className="questions-text">Woman</label><br/>
+                    <label onClick={this.onChangeGenderFemale}><FontAwesome className="male-female" name='female' size='5x' /></label>
+                  </div>
+                </div>
+              </div><br/>
+              <h5 className="questions-text">What about music?</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedRock}>
+                    <label className="questions-text">Rock</label><br/>
+                    <label onClick={this.onChangeMusicRock}><img className="musicIcon" src="/Questions/004-guitar.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedClassical}>
+                    <label className="questions-text">Classical</label><br/>
+                    <label onClick={this.onChangeMusicClassical}><img className="musicIcon" src="/Questions/002-viola.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedRap}>
+                    <label className="questions-text">Rap</label><br/>
+                    <label onClick={this.onChangeMusicRap}><img className="musicIcon" src="/Questions/003-rap.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedJazz}>
+                    <label className="questions-text">Jazz</label><br/>
+                    <label onClick={this.onChangeMusicJazz}><img className="musicIcon" src="/Questions/001-trumpet.png"/></label>
+                  </div>
+                </div>
+              </div><br/>
+              <h5 className="questions-text">And sports?</h5>
+              <div className="card-deck mt-4">
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedFootball}>
+                    <label className="questions-text">Football</label><br/>
+                    <label onClick={this.onChangeSportFootball}><img className="musicIcon" src="/Questions/006-soccer.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedYoga}>
+                    <label className="questions-text">Yoga</label><br/>
+                    <label onClick={this.onChangeSportYoga}><img className="musicIcon" src="/Questions/001-yoga.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedCycling}>
+                    <label className="questions-text">Cycling</label><br/>
+                    <label onClick={this.onChangeSportCycling}><img className="musicIcon" src="/Questions/005-bike.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedRugby}>
+                    <label className="questions-text">Rugby</label><br/>
+                    <label onClick={this.onChangeSportRugby}><img className="musicIcon" src="/Questions/003-rugby.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selectedTennis}>
+                    <label className="questions-text">Tennis</label>
+                    <label onClick={this.onChangeSportTennis}><img className="musicIcon" src="/Questions/004-tennis.png"/></label>
+                  </div>
+                </div>
+                <div className="card bg-white border-light musicIcon">
+                  <div className = {selected3Period}>
+                    <label className="questions-text">3rd Period</label><br/>
+                    <label onClick={this.onChangeSport3Period}><img className="musicIcon" src="/Questions/002-beer.png"/></label>
+                  </div>
+                </div>
               </div>
-              <h5 className="questions-text">You are:</h5><br/>
-              <span className="male-female">
-                  <label className={selectedMale} onClick={this.onChangeGenderMale}><FontAwesome className="male-female" name='male' size='5x' /></label>
-                  <label className={selectedFemale} onClick={this.onChangeGenderFemale}><FontAwesome className="male-female" name='female' size='5x' /></label>
-              </span><br/><br/>
-              <h5 className="questions-text">What about music?</h5><br/>
-              <span>
-                  <label className="questions-text">Rock</label>
-                  <label className="questions-text">Classical</label>
-                  <label className="questions-text">Rap</label>
-                  <label className="questions-text">Jazz</label><br/>
-                  <label className={selectedRock} onClick={this.onChangeMusicRock}><img className="musicIcon" src="/Questions/004-guitar.png"/></label>
-                  <label className={selectedClassical} onClick={this.onChangeMusicClassical}><img className="musicIcon" src="/Questions/002-viola.png"/></label>
-                  <label className={selectedRap} onClick={this.onChangeMusicRap}><img className="musicIcon" src="/Questions/003-rap.png"/></label>
-                  <label className={selectedJazz} onClick={this.onChangeMusicJazz}><img className="musicIcon" src="/Questions/001-trumpet.png"/></label>
-              </span><br/><br/>
-              <h5 className="questions-text">And sports?</h5><br/>
-              <span>
-                  <label className="questions-text">Football</label>
-                  <label className="questions-text">Yoga</label>
-                  <label className="questions-text">Cycling</label>
-                  <label className="questions-text">Rugby</label><br/>
-                  <label className={selectedFootball} onClick={this.onChangeSportFootball}><img className="musicIcon" src="/Questions/006-soccer.png"/></label>
-                  <label className={selectedYoga} onClick={this.onChangeSportYoga}><img className="musicIcon" src="/Questions/001-yoga.png"/></label>
-                  <label className={selectedCycling} onClick={this.onChangeSportCycling}><img className="musicIcon" src="/Questions/005-bike.png"/></label>
-                  <label className={selectedRugby} onClick={this.onChangeSportRugby}><img className="musicIcon" src="/Questions/003-rugby.png"/></label>
-                  <label className="questions-text">Tennis</label>
-                  <label className="questions-text">3rd Period</label><br/>
-                  <label className={selectedTennis} onClick={this.onChangeSportTennis}><img className="musicIcon" src="/Questions/004-tennis.png"/></label>
-                  <label className={selected3Period} onClick={this.onChangeSport3Period}><img className="musicIcon" src="/Questions/002-beer.png"/></label>
-              </span><br/><br/>
               <button type='submit' className="button-next">Next</button>
             </center>
           </form>
