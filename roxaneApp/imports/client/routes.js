@@ -10,7 +10,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import App from './ui/App';
 import Welcome from './ui/welcomePages/Welcome';
 import Questions from './ui/questions/Questions';
-import CircuitPage from './ui/circuit/Circuit';
+import CircuitSelection from './ui/circuit/CircuitSelection';
 import NotFoundPage from './ui/NotFoundPage';
 import AdministrationHome from './ui/administration/administrationHome'
 import InterestZonesList from './ui/administration/interestZones/InterestZones';
@@ -29,7 +29,7 @@ export const renderRoutes = () => (
     <Switch>
       <Route exact path="/" component={Welcome}/>
       <Route exact path='/questions' component={Questions}/>
-      <Route exact path='/circuits' component={CircuitPage} />
+      <Route exact path='/circuits' component={CircuitSelection} />
       <Route exact path='/administration' component={AdministrationHome}/>
       <Route exact path='/administration/interestZones' component={InterestZonesList}/>
       <Route exact path='/administration/users' component={Users} />

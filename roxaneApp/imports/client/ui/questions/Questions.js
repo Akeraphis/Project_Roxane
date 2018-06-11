@@ -210,7 +210,7 @@ export default class Questions extends Component {
     const depdate = ReactDOM.findDOMNode(this.refs.depDate).value.trim();
     const retdate = ReactDOM.findDOMNode(this.refs.retDate).value.trim();
     console.log(this.state.group, birthdate, this.state.gender, this.state.music, this.state.sport)
-    //window.location = '/circuits';
+    window.location = '/circuits';
   }
 
   render(){
