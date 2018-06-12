@@ -14,16 +14,18 @@ export default class Welcome extends Component {
       <div className="container">
         <NavBarHome />
         <main>
-          <div className="Planning-roadtrips-s center">
-            Planning roadtrips should not be a pain. We make it easy.
-          </div>
-          <button className="button-start" onClick={this.clickOnStart}>Start</button>
-          <DifferentiatorsIcons />
-          <TripsHighlighted/>
-          <div className="-and-many-more center">
-            And many more ...
-          </div>
-          <button className="button-start2" onClick={this.clickOnStart}>Start</button>
+          <center>
+            <div className="Planning-roadtrips-s center">
+              Planning roadtrips should not be a pain. We make it easy.
+            </div>
+            <button className="button-start" onClick={this.clickOnStart}>Start</button>
+            <DifferentiatorsIcons />
+            <TripsHighlighted/>
+            <div className="-and-many-more center">
+              And many more ...
+            </div>
+            <button className="button-start2" onClick={this.clickOnStart}>Start</button>
+          </center>
           <WelcomeFooter/>
         </main>
       </div>
@@ -35,16 +37,26 @@ class DifferentiatorsIcons extends Component{
   render(){
     return(
       <div className="diffSection">
-        <img src="/Brain.png" className="Shape2"/>
-        <img src="/map.png" className="Shape2"/>
-        <img src="/pushbutton.png" className="Shape2"/>
-        <img src="/snap.png" className="Shape2"/>
-        <img src="/support.png" className="Shape2"/><br/>
-        <span className="diffText">AI powered</span>
-        <span className="diffText">Customized trips</span>
-        <span className="diffText">Sit and relax</span>
-        <span className="diffText">Pay once for all</span>
-        <span className="diffText">Premium support</span>
+        <div className="diffItem">
+          <img src="/Brain.png" className="Shape2"/><br/>
+          <span className="diffText">AI powered</span>
+        </div>
+        <div className="diffItem">
+          <img src="/snap.png" className="Shape2"/><br/>
+          <span className="diffText">Entire circuits</span>
+        </div>
+        <div className="diffItem">
+          <img src="/map.png" className="Shape2"/><br/>
+          <span className="diffText">Fully customizable</span>
+        </div>
+        <div className="diffItem">
+          <img src="/pushbutton.png" className="Shape2"/><br/>
+          <span className="diffText">Pay once for all</span>
+        </div>
+        <div className="diffItem">
+          <img src="/support.png" className="Shape2"/><br/>
+          <span className="diffText">Premium support</span>
+        </div>
       </div>
     )
   }
@@ -57,21 +69,21 @@ class TripsHighlighted extends Component{
       <div className="highlighted-trips-board">
         <div className="card-deck mt-4">
           <div className="card bg-white text-white image-trip-welcome">
-            <img className="card-img image-trip-welcome" src="/Homepage/USA.jpg" alt="Card image" />
-            <div className="card-img-overlay image-trip-welcome">
-              <center><h5 className="card-title image-trip-text">USA</h5></center>
-            </div>
-          </div>
-          <div className="card bg-white text-white image-trip-welcome">
             <img className="card-img image-trip-welcome" src="/Homepage/Brazil.jpg" alt="Card image" />
             <div className="card-img-overlay image-trip-welcome">
-              <center><h5 className="card-title image-trip-text">Brazil</h5></center>
+              <center><span className="card-title image-trip-text">Brazil</span></center>
             </div>
           </div>
           <div className="card bg-white text-white image-trip-welcome">
-            <img className="card-img image-trip-welcome" src="/Homepage/Italy 1.jpg" alt="Card image" />
+            <img className="card-img image-trip-welcome" src="/Homepage/Malaysia.jpg" alt="Card image" />
             <div className="card-img-overlay image-trip-welcome">
-              <center><h5 className="card-title image-trip-text">Italy</h5></center>
+              <center><span className="card-title image-trip-text">Malaysia</span></center>
+            </div>
+          </div>
+          <div className="card bg-white text-white image-trip-welcome">
+            <img className="card-img image-trip-welcome" src="/Homepage/USA.jpg" alt="Card image" />
+            <div className="card-img-overlay image-trip-welcome">
+              <center><span className="card-title image-trip-text">USA</span></center>
             </div>
           </div>
         </div>
@@ -79,19 +91,19 @@ class TripsHighlighted extends Component{
             <div className="card bg-white text-white image-trip-welcome">
               <img className="card-img image-trip-welcome" src="/Homepage/France.jpg" alt="Card image" />
               <div className="card-img-overlay image-trip-welcome">
-                <center><h5 className="card-title image-trip-text">France</h5></center>
+                <center><span className="card-title image-trip-text">France</span></center>
               </div>
             </div>
             <div className="card bg-white text-white image-trip-welcome">
               <img className="card-img image-trip-welcome" src="/Homepage/Patagonia.jpg" alt="Card image" />
               <div className="card-img-overlay image-trip-welcome">
-                <center><h5 className="card-title image-trip-text">Argentina</h5></center>
+                <center><span className="card-title image-trip-text">Patagonia</span></center>
               </div>
             </div>
             <div className="card bg-white text-white image-trip-welcome">
-              <img className="card-img image-trip-welcome" src="/Homepage/Malaysia.jpg" alt="Card image" />
+              <img className="card-img image-trip-welcome" src="/Homepage/Italy 1.jpg" alt="Card image" />
               <div className="card-img-overlay image-trip-welcome">
-                <center><h5 className="card-title image-trip-text">Malaysia</h5></center>
+                <center><span className="card-title image-trip-text">Italy</span></center>
               </div>
             </div>
           </div>

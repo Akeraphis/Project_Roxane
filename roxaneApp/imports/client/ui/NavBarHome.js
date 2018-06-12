@@ -7,6 +7,7 @@ export default class NavBarHome extends Component {
   render(){
     return (
       <div className="container navbar-signup">
+          <img src="/logo.png" className="logo"/>
           <a href="/" className="NAME">AiChill</a>
           <a href='/administration' className="Help">Administration</a>
           <a href='/help' className="Help">Help</a>
