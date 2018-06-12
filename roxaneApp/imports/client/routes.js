@@ -11,6 +11,7 @@ import App from './ui/App';
 import Welcome from './ui/welcomePages/Welcome';
 import Questions from './ui/questions/Questions';
 import CircuitSelection from './ui/circuit/CircuitSelection';
+import Trip from './ui/trip/Trip';
 import NotFoundPage from './ui/NotFoundPage';
 import AdministrationHome from './ui/administration/administrationHome'
 import InterestZonesList from './ui/administration/interestZones/InterestZones';
@@ -30,6 +31,7 @@ export const renderRoutes = () => (
       <Route exact path="/" component={Welcome}/>
       <Route exact path='/questions' component={Questions}/>
       <Route exact path='/circuits' component={CircuitSelection} />
+      <Route exact path='/trip' component={Trip}/>
       <Route exact path='/administration' component={AdministrationHome}/>
       <Route exact path='/administration/interestZones' component={InterestZonesList}/>
       <Route exact path='/administration/users' component={Users} />

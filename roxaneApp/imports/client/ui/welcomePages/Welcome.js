@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import NavBarHome from "../NavBarHome";
 
 export default class Welcome extends Component {
-
-  clickOnStart(e){
-    e.preventDefault();
-    window.location='/questions';
-  }
 
   render(){
     return (
@@ -18,13 +14,13 @@ export default class Welcome extends Component {
             <div className="Planning-roadtrips-s center">
               Planning roadtrips should not be a pain. We make it easy.
             </div>
-            <button className="button-start" onClick={this.clickOnStart}>Start</button>
+            <Link to='/questions'><button className="button-start">Start</button></Link>
             <DifferentiatorsIcons />
             <TripsHighlighted/>
             <div className="-and-many-more center">
               And many more ...
             </div>
-            <button className="button-start2" onClick={this.clickOnStart}>Start</button>
+            <Link to='/questions'><button className="button-start2">Start</button></Link>
           </center>
           <WelcomeFooter/>
         </main>

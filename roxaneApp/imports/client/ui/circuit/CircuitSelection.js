@@ -8,12 +8,6 @@ import CircuitCard from './CircuitCard.js';
 import NavBarHome from '../NavBarHome.js'
 
 class CircuitSelection extends Component {
-  constructor(){
-    super();
-    this.state= {
-      selectedCircuit : {_id: "hkljqsdjq"}
-    }
-  };
 
   render(){
     return(
@@ -26,6 +20,7 @@ class CircuitSelection extends Component {
               return(
                 <CircuitCard
                   key={a._id}
+                  id={a._id}
                   name={a.name}
                   description={a.description}
                   pictures={a.Pictures}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import ReactDOM from 'react-dom';
 import InputRange from 'react-input-range';
+import { Link } from 'react-router-dom';
 
 import NavBarHome from "../NavBarHome";
 import 'react-input-range/lib/css/index.css';
@@ -48,6 +49,7 @@ export default class Questions extends Component {
     this.setState({
       group: "alone"
     });
+    Session.set("group", "alone");
   }
 
   onChangeGroupCouple(e){
@@ -55,6 +57,7 @@ export default class Questions extends Component {
     this.setState({
       group: "couple"
     });
+    Session.set("group", "couple");
   }
 
   onChangeGroupFamily(e){
@@ -62,6 +65,7 @@ export default class Questions extends Component {
     this.setState({
       group: "family"
     });
+    Session.set("group", "family");
   }
 
   onChangeGroupFriends(e){
@@ -69,6 +73,7 @@ export default class Questions extends Component {
     this.setState({
       group: "friends"
     });
+    Session.set("group", "friends");
   }
 
   onChangeTravelBeach(e){
@@ -209,8 +214,7 @@ export default class Questions extends Component {
     const birthdate = ReactDOM.findDOMNode(this.refs.birthDate).value.trim();
     const depdate = ReactDOM.findDOMNode(this.refs.depDate).value.trim();
     const retdate = ReactDOM.findDOMNode(this.refs.retDate).value.trim();
-    console.log(this.state.group, birthdate, this.state.gender, this.state.music, this.state.sport)
-    window.location = '/circuits';
+    console.log(this.state.group, birthdate, this.state.gender, this.state.music, this.state.sport);
   }
 
   render(){
@@ -474,7 +478,7 @@ export default class Questions extends Component {
                   </div>
                 </div>
               </div>
-              <button type='submit' className="button-next">Next</button>
+              <Link to='/circuits'><button type='submit' className="button-next">Next</button></Link>
             </center>
           </form>
         </main>
