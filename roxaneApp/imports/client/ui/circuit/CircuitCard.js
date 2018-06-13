@@ -20,7 +20,7 @@ export default class CircuitCard extends Component {
     return(
       <div className="Rectangle-3">
         <img className="card-img-top Rectangle-4" src={this.getImage(this.props.pictures)}/>
-        <span className="MatchSpan"><span className="Hot-match">Hot match</span></span>
+        <span className="MatchSpan"><span className="Hot-match"><img src="/warm symbol.png" className="matchSymbol2" /> Hot match</span></span>
         <div className="Rectangle-5">
           <span className="Circuit-Name">{this.props.name}</span><br/>
           <span className="price-circuit">1000 € - 1500 €</span>

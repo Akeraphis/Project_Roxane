@@ -12,6 +12,8 @@ export default class Questions extends Component {
     super();
     this.state={
       group : "",
+      depDate : "",
+      retDate : "",
       travel: "",
       car : false,
       gender : "",
@@ -23,6 +25,8 @@ export default class Questions extends Component {
     this.onChangeGroupCouple = this.onChangeGroupCouple.bind(this);
     this.onChangeGroupFamily = this.onChangeGroupFamily.bind(this);
     this.onChangeGroupFriends = this.onChangeGroupFriends.bind(this);
+    this.onChangeDepDate = this.onChangeDepDate.bind(this);
+    this.onChangeRetDate = this.onChangeRetDate.bind(this);
     this.onChangeTravelBeach = this.onChangeTravelBeach.bind(this);
     this.onChangeTravelSports = this.onChangeTravelSports.bind(this);
     this.onChangeTravelCulture = this.onChangeTravelCulture.bind(this);
@@ -74,6 +78,22 @@ export default class Questions extends Component {
       group: "friends"
     });
     Session.set("group", "friends");
+  }
+
+  onChangeDepDate(e){
+    e.preventDefault();
+    this.setState({
+      depDate: e.target.value
+    });
+    Session.set("depDate", e.target.value);
+  }
+
+  onChangeRetDate(e){
+    e.preventDefault();
+    this.setState({
+      retDate: e.target.value
+    });
+    Session.set("retDate", e.target.value);
   }
 
   onChangeTravelBeach(e){
@@ -269,6 +289,7 @@ export default class Questions extends Component {
                   placeholder="Departure Date"
                   aria-label="Departure Date"
                   aria-describedby="basic-addon3"
+                  onChange={this.onChangeDepDate}
                 />
               </div>
               <div className="input-group mb-3">
@@ -282,6 +303,7 @@ export default class Questions extends Component {
                   placeholder="Return Date"
                   aria-label="Return Date"
                   aria-describedby="basic-addon4"
+                  onChange={this.onChangeRetDate}
                 />
               </div><br/><br/>
               <h5 className="questions-text">You will travel:</h5>

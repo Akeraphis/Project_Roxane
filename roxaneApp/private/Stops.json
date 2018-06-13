@@ -5,7 +5,8 @@
 		"Region": "Tuscany",
 		"Latitude": "43.319721",
 		"Longitude": " 11.331203",
-		"Description": "It is the capital of the province of Siena."
+		"Description": "It is the capital of the province of Siena.",
+		"Picture": "/stop/Sienna.jpg"
 	},
 	{
 		"ID": "S_USA_CA_City_1",
@@ -23,7 +24,7 @@
 		"Latitude": "37.86463",
 		"Longitude": "-119.53794",
 		"Description": "Yosemite National Park",
-		"Picture": "/stops/Yosemite"
+		"Picture": "/stops/Yosemite.jpg"
 	},
 	{
 		"ID": "S_USA_NV_City_1",
@@ -105,5 +106,32 @@
 		"Longitude": "-109.878259",
 		"Description": "Canyonlands National Park",
 		"Picture": ""
+	},
+	{
+		"ID": "S_Tuscany_Florence",
+		"Name": "Florence",
+		"Region": "Tuscany",
+		"Latitude": "43.769560",
+		"Longitude": "11.255814",
+		"Description": "Florence",
+		"Picture": "/stop/Florence.jpg"
+	},
+	{
+		"ID": "S_Tuscany_Pisa",
+		"Name": "Pisa",
+		"Region": "Tuscany",
+		"Latitude": "43.722839",
+		"Longitude": "10.401689",
+		"Description": "Pisa",
+		"Picture": "/stop/Pisa.jpg"
+	},
+	{
+		"ID": "S_Tuscany_Arezzo",
+		"Name": "Arezzo",
+		"Region": "Tuscany",
+		"Latitude": "43.463284",
+		"Longitude": "11.879634",
+		"Description": "Arezzo",
+		"Picture": "/stop/Arezzo.jpg"
 	}
 ]

@@ -113,8 +113,8 @@ class MapCircuit extends Component {
         style="mapbox://styles/mapbox/streets-v10"
         onStyleLoad={this.onStyleLoad}
         containerStyle={{
-          height: "100vh",
-          width: "100vw"
+          width: "800px",
+          height: "390px"
         }}>
           <Layer type="symbol" id="ips" layout={layoutLayer2} image={images}>
             {this.props.interestPoints.map((ip)=>{

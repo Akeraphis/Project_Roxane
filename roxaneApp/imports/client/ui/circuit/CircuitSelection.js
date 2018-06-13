@@ -25,6 +25,7 @@ class CircuitSelection extends Component {
                   description={a.description}
                   pictures={a.Pictures}
                   nbDays={a.totalNbDays}
+                  stops={a.stopDaysTable}
                 />
               )
             })}
