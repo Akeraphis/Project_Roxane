@@ -7,6 +7,7 @@ import { Circuits } from '../../../api/circuits.js';
 import NavBarHome from '../NavBarHome.js';
 import MapCircuit from '../circuit/MapCircuit.js';
 import StopBloc from './StopBloc';
+import SummaryBox from './SummaryBox';
 
 export default class Trip extends Component {
 
@@ -19,6 +20,7 @@ export default class Trip extends Component {
         <div className="mapContainer">
           <MapCircuit />
         </div>
+        <SummaryBox />
         <div className="HighlightPicsBloc">
           {Session.get("circuit").pictures.map((a)=>{
             return(
